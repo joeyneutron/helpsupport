@@ -13,7 +13,8 @@
 }
 @media(max-width:780px){
   .main{
-    margin-left: 50vw;
+    margin-left: 10%;
+    margin-top: 0vh;
   }
 }
 .group{
