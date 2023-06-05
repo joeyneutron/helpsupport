@@ -108,6 +108,34 @@ const faqData = [
         },
       ],
   },
+  
+  {
+    groupName: "MUTUAL FUNDS",
+    id:6,
+    items: [
+      {
+        question: "How can I subscribe?",
+        list:["Login",
+        "Click on Mutual funds",
+        "Click on subscribe",
+        "Choose Fund to subscribe", 
+        "Select Payment method",
+        "Enter your investment amount and follow the designated steps"],
+      },
+      {
+        question: "How can I redeem my units?",
+        list:["Login",
+        "Click on Mutual funds", 
+        "Select “Redeem”",
+        "Select funds to redeem", 
+        "Confirm Redemption Amount and account number",
+        "Click “proceed”" 
+],
+     
+
+        },
+      ],
+  },
 
 ];
 
@@ -191,7 +219,7 @@ const AccordionGroup = ({ group }) => {
 
 export default function App() {
   return (
-    <div className="main">
+    <div className="faqs">
       {faqData.map((group, index) => (
         <AccordionGroup key={index} group={group} />
       ))}
