@@ -12,10 +12,12 @@ const faqData = [
       },
       {
         question: "What do I need to get started?",
-        answer: "To get started, please fill the sign-up form on app.cardinalstone.com or via the mobile phone application. Please upload all required documents listed below correctly to enable a KYC compliant status. There is a 1mb size limit on all document uploads.",
-        list: [" A valid government issued ID (International Passport, Driver’s License, National Identity Card, or National Voter’s Card)",
-                "Means of Identification for foreign clients must be notarized",
-                "Proof of Address/Utility Bill (not longer than 3 months",
+        list: ["To get started, please fill the sign-up form on the web or mobile application. The mobile app is available on iOS or Android stores",
+        "Please upload all required documents listed below correctly to enable a KYC compliant status. There is a 1mb size limit on all document uploads.",
+        "The required documents are:",
+        "A valid government issued ID (International Passport, Driver’s License, National Identity Card, or National Voter’s Card)",
+        "Means of Identification for foreign clients must be notarized",
+        "Proof of Address/Utility Bill (not longer than 3 months",
                 "Passport Photograph",
                 "Signature Specimen",
                 "Signed Investor Profile Questionnaire and Portfolio Management Agreement (for portfolio management clients only)"]
@@ -32,15 +34,23 @@ const faqData = [
     items: [
       {
         question: "How can I fund my account?",
-        answer: "Click “Fund Account” on the Investment Value card on the dashboard.You can fund your investment cash account via USSD payment, card payment, bank transfer or CardinalStone Wallet.Funding account from CS wallet carries no transaction charges. However, the wallet balance must be sufficient.",
+        list:["Click “Fund Account” on the Investment Value card on the dashboard.",
+        "You can fund your investment cash account via USSD payment, card payment, bank transfer or CardinalStone Wallet.",
+        "Funding account from CS wallet carries no transaction charges. However, the wallet balance must be sufficient."],
       },
       {
         question: "What is a Cardinalstone Wallet?",
-        answer: "A CardinalStone Wallet is a charge free method of paying for CardinalStone services. You can fund your investment cash account via USSD payment, card payment, bank transfer or gift voucher redemption. To apply for a wallet, search for the “Wallet” Card on your dashboard and click the “+” to apply. This product is only available to KYC compliant clients. Funds transferred to your virtual account will reflect in your wallet if you have one.",
+        list:["A CardinalStone Wallet is a charge free method of paying for CardinalStone services.",
+        "You can fund your investment cash account via USSD payment, card payment, bank transfer or gift voucher redemption.",
+        "To apply for a wallet, search for the “Wallet” Card on your dashboard and click the “+” to apply.",
+        "This product is only available to KYC compliant clients.",
+        "Funds transferred to your virtual account will reflect in your wallet if you have one."]
       },
       {
         question: "What is a Virtual Account?",
-        answer: "Creating a virtual account reserves an account number and account name in the format “CardinalStone/CustomerName”.Any money transferred to that account will reflect in the CardinalStone Wallet.Apply for a virtual account in the “More” Section of Alpha CS. This product is only available to KYC compliant clients.",
+        list:["Creating a virtual account reserves an account number and account name in the format “CardinalStone/CustomerName”.","Any money transferred to that account will reflect in the CardinalStone Wallet.",
+        "Apply for a virtual account in the “More” Section of CS Alpha.",
+        "This product is only available to KYC compliant clients."]
       },
     ],
   },
@@ -63,7 +73,11 @@ const faqData = [
     items: [
       {
         question: "How can I update my KYC details?",
-        answer: "KYC information can be updated in the “More” section.There is a “KYC update” page which can be filled and saved to update changes.For documents, tick the name of the document to be updated e.g. “Signature Specimen” and a field for the upload will be displayed underneath. Ensure all uploads are within size limit of 50kB.      Please ensure the “Update KYC” button is clicked once all relevant fields have been completed.",
+        answer: "KYC information can be updated in the “More” section.",
+        list:["There is a “KYC update” page which can be filled and saved to update changes.",
+        "For documents, tick the name of the document to be updated e.g. “Signature Specimen” and a field for the upload will be displayed underneath.",
+        "Ensure all uploads are within size limit of 50kB.",
+        "Please ensure the “Update KYC” button is clicked once all relevant fields have been completed.",]
         },
       
     ],
@@ -75,11 +89,13 @@ const faqData = [
       {
         question: "What reports are available to me?",
         answer: "There is a free version of valuation and cash reports available to clients. To access this -",
-        list:["Login","Select a business type e.g., Asset Management","On the navigation panel, select “Report” and choose the report type."],
+        list:["Login",
+        "Select a business type e.g., Asset Management",
+        "On the navigation panel, select “Report” and choose the report type."],
       },
       {
         question: "How can I get an Investment Confirmation Letter?",
-        answer:"Embassy letters and stamped reports can be generated for free. To access this -?",
+        answer:"Embassy letters and stamped reports can be generated for free. To access this-",
         list:["Login",
         "Select a business type e.g., Asset Management",
         " On the navigation panel, select“More” and click on “Investment Confirmation Letter",
@@ -102,29 +118,59 @@ const AccordionItem = ({ item }) => {
     setIsExpanded(!isExpanded);
   };
 
+  // Function to replace specific words with anchor tags in the answer text and lists
+  const replaceWordsWithAnchors = (text) => {
+    if (!text) {
+      return "";
+    }
+  
+    const wordsToReplace = ["Login", "iOS", "Web", "Android"];
+    const wordRegex = new RegExp(`\\b(${wordsToReplace.join("|")})\\b`, "gi");
+    return text.replace(wordRegex, (word) => {
+      const url = getURLForWord(word); // Function to get the URL for the specific word
+      return `<a href="${url}" target="_blank" rel="noopener noreferrer">${word}</a>`;
+    });
+  };
+  // Function to get the URL for a specific word
+  const getURLForWord = (word) => {
+    if (word === "Login" || word==="web") {
+      return "https://app.cardinalstone.com";
+    } else if (word === "Android") {
+      return "https://play.google.com/store/apps/details?id=com.cardinalstone.csalpha";
+    }
+    else if (word === "iOS") {
+      return "https://apps.apple.com/ng/app/cs-alpha/id1629621317";
+    }
+    // Add more conditions for other words and their corresponding URLs
+    return "#";
+  };
+
   return (
     <>
-    <div className="eachitem">
-      <div className="question" onClick={handleOnClick}>
-        {item.question}
-        {isExpanded ? (
-          <span className="icon-minus">&#8722;</span>
-        ) : (
-          <span className="icon-plus">&#43;</span>
-        )}
-      </div>
-      {isExpanded && (
-        <div className="answer">
-          <p>{item.answer}</p>
-          {item.list && (
-            <ul>
-              {item.list.map((li, index) => (
-                <li key={index}>{li}</li>
-              ))}
-            </ul>
+      <div className="eachitem">
+        <div className="question" onClick={handleOnClick}>
+          {item.question}
+          {isExpanded ? (
+            <span className="icon-minus">&#8722;</span>
+          ) : (
+            <span className="icon-plus">&#43;</span>
           )}
         </div>
-      )}
+        {isExpanded && (
+          <div className="answer">
+            <p dangerouslySetInnerHTML={{ __html: replaceWordsWithAnchors(item.answer) }}></p>
+            {item.list && (
+              <ul>
+                {item.list.map((li, index) => (
+                  <li
+                    key={index}
+                    dangerouslySetInnerHTML={{ __html: replaceWordsWithAnchors(li) }}
+                  ></li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
       </div>
     </>
   );
@@ -133,7 +179,9 @@ const AccordionItem = ({ item }) => {
 const AccordionGroup = ({ group }) => {
   return (
     <div className="group">
-      <div className="group-name" id={group.id}>{group.groupName}</div>
+      <div className="group-name" id={group.id}>
+        {group.groupName}
+      </div>
       {group.items.map((item, index) => (
         <AccordionItem key={index} item={item} />
       ))}
@@ -150,4 +198,5 @@ export default function App() {
     </div>
   );
 }
+
 
