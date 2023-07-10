@@ -1,33 +1,4 @@
 
-<<<<<<< HEAD
-body{
-  background-color:rgb(255, 255, 255);
-  position: relative;
-  z-index: -30;
-}
-ul{
-  list-style: none;
-}
-.header{
-  height:auto;
-  width:100%;
-  min-height: 15vh;
-  align-items: top;
-  justify-content: center;
-  position: static;
-  margin: auto;
-  margin-top: -5%;
-  font-size: calc(10px + 2vmin);
-  border: none;
-  background-color: rgba(0, 37, 100, 0.064);
-}
-.headerImg{
-  height:25%;
-  width:25%;
-  float: left;
-  padding: 2vw;
-}
-=======
 ul{
   list-style: none;
 }
@@ -41,7 +12,6 @@ img{
   
 }
 
->>>>>>> e71783d (changes)
 h1 {
   text-align: center;
   color: rgb(0, 37, 100);
@@ -52,23 +22,11 @@ h1 {
 }
 
 .leftnav{
-<<<<<<< HEAD
-  display: flex;
-  justify-self:left;
-  width: 40%;
-  height: 30%;
-  left: 0vw;
-  top:0%;
-  margin:auto;
-  margin-top: 11rem;
-  position:fixed;
-=======
   width: 25%;
   height: 80%;
   max-width: 25%;
   position:fixed;
   top:55%
->>>>>>> e71783d (changes)
   
 }
 
@@ -78,11 +36,7 @@ h1 {
 @media(max-width:780px){
   .leftnav{
     position: static;
-<<<<<<< HEAD
-    max-width: 10%;
-=======
     max-width: 7%;
->>>>>>> e71783d (changes)
     margin-left: 10%;
     margin-top: 0vh;
   }

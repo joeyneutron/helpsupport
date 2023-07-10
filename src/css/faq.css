@@ -1,19 +1,12 @@
 
 .faqs{
   margin-left: 30%;
-<<<<<<< HEAD
-  width: 60%;
-  height: 80%;
-  max-width: 70%;
-  padding-bottom: 1%;
-=======
   width: 63%;
   height: 80%;
   max-width: 63%;
   padding-bottom: 1%;
   display: block;
   padding-top: 25%;
->>>>>>> e71783d (changes)
 }
 @media (max-width: 780px) {
   .faq {
@@ -24,10 +17,6 @@
 
 .group {
   padding: 3%;
-<<<<<<< HEAD
-=======
-  
->>>>>>> e71783d (changes)
 }
 
 .group-name {
