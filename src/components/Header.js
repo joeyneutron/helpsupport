@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import "../css/App.css";
 import logo from "../images/logo.png";
@@ -36,3 +37,17 @@ function Header() {
 }
 
 export default Header;
+=======
+import React from "react";
+import header from "../images/faqheader.jpg";
+
+function Header(){
+  return (
+    <React.Fragment>
+      <img src={header} alt="cspimage" />
+    </React.Fragment>
+  );
+}
+
+export default Header;
+>>>>>>> e71783d (changes)
