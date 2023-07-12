@@ -1,6 +1,6 @@
 
 import React from "react";
-import header from "../images/faqheader.jpg";
+import header from "../images/faqheader.png";
 
 function Header(){
   return (
