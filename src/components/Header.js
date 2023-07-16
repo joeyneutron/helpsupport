@@ -1,11 +1,13 @@
 
 import React from "react";
 import header from "../images/faqheader.png";
-
+import '../css/index.css'
 function Header(){
   return (
     <React.Fragment>
-      <img src={header} alt="cspimage" />
+      <div className = "head">
+        <img src={header} alt="cspimage" />
+      </div>
     </React.Fragment>
   );
 }

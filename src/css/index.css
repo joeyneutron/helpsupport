@@ -1,4 +1,6 @@
-
+html {
+  scroll-padding-top: 40%
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,8 +10,131 @@ body {
   -moz-osx-font-smoothing: grayscale;
   
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.asnwer{
+  padding: 2%;
 }
+.head{
+  position: fixed;
+  border-bottom:5px solid rgb(0, 37, 100);
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+img{
+  width: 80%;
+  max-width: 100%;
+  height: auto;
+}
+@media(max-width:780px){
+  img{
+    position: fixed;
+    max-width: 780px;
+  }
+}
+
+.leftnav{
+  width: 25%;
+  height: 80%;
+  max-width: 25%;
+  position:fixed;
+  top:45%;
+  list-style: none;
+}
+
+.faq-category.selected {
+  background-color: rgb(82, 141, 194);
+ 
+}
+@media(max-width:780px){
+  .leftnav{
+    position: fixed;
+    max-width: 30%;
+    margin-left: -8%;
+    margin-top: -8%
+
+  }
+}
+li{
+  list-style: square;
+  padding: 1%;
+}
+
+.faq-category {
+  position:relative;
+  display: block;
+  height: 50%;
+  width: 100%;
+  line-height: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: .8px;
+  padding: 0 0.5rem;
+  color: #fff;
+  background-color: rgb(0, 37, 100);
+  white-space: nowrap;
+  transition: background .3s;
+}
+
+.faq-container{
+  margin-left: 30%;
+  margin-top: 20%;
+  width: 60%;
+  max-width: 60%;
+  padding-bottom: 1%;
+  position: absolute;
+  display: block;
+  z-index: -3;
+}
+@media (max-width: 780px) {
+  .faq-container {
+    margin-left: 10%;
+    margin-top: 0vh;
+  }
+}
+
+.group {
+  padding: 3%;
+}
+
+.group-name {
+  font-weight:bolder;
+  margin-bottom: 2%;
+  padding: 1%;
+  cursor: pointer;
+  background-color: none;
+  font-size: 1.5rem;
+}
+
+.question {
+  cursor: pointer;
+  font-size: 1rem;
+  font-style: bold;
+  padding: 2%;
+}
+
+.navitem {
+  list-style: none;
+  padding: 0.5%;
+}
+
+
+.eachitem {
+  box-shadow: 0.5px 1px 1px 2px rgba(82, 141, 194, 30%);
+  padding: 2%;
+}
+
+
+
+.icon-plus,
+.icon-minus {
+  margin-left: 4px;
+}
+
+.icon-plus:hover,
+.icon-minus:hover {
+  cursor: pointer;
+}
+
+
+

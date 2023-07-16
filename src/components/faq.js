@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../css/faq.css";
+import '../css/index.css'
 
 const faqData = [
   {
@@ -217,14 +217,87 @@ const AccordionGroup = ({ group }) => {
   );
 };
 
+
 export default function App() {
   return (
-    <div className="faqs">
-      {faqData.map((group, index) => (
-        <AccordionGroup key={index} group={group} />
-      ))}
+    <>
+    <LeftNav/>
+    <div className="faq-container">
+      <div className="faq-content">
+        {faqData.map((group, index) => (
+          <AccordionGroup key={index} group={group} />
+        ))}
+      </div>
     </div>
+    </>
   );
 }
 
+export function LeftNav() {
+  const [selectedItem, setSelectedItem] = useState(null);
 
+  const handleItemClick = (index) => {
+    setSelectedItem(index);
+  };
+
+  return (
+    <div className="leftnav">
+      <ul className="categories">
+        <li className="navitem">
+          <a
+            className={`faq-category ${selectedItem === 1 ? "selected" : ""}`}
+            href="#1"
+            onClick={() => handleItemClick(1)}
+          >
+            Account Opening
+          </a>
+        </li>
+        <li className="navitem">
+          <a
+            className={`faq-category ${selectedItem === 2 ? "selected" : ""}`}
+            href="#2"
+            onClick={() => handleItemClick(2)}
+          >
+            Funding
+          </a>
+        </li>
+        <li className="navitem">
+          <a
+            className={`faq-category ${selectedItem === 3 ? "selected" : ""}`}
+            href="#3"
+            onClick={() => handleItemClick(3)}
+          >
+            Gift Voucher
+          </a>
+        </li>
+        <li className="navitem">
+          <a
+            className={`faq-category ${selectedItem === 4 ? "selected" : ""}`}
+            href="#4"
+            onClick={() => handleItemClick(4)}
+          >
+            KYC Update
+          </a>
+        </li>
+        <li className="navitem">
+          <a
+            className={`faq-category ${selectedItem === 5 ? "selected" : ""}`}
+            href="#5"
+            onClick={() => handleItemClick(5)}
+          >
+            Investment Letters &amp; Reports
+          </a>
+        </li>
+        <li className="navitem">
+          <a
+            className={`faq-category ${selectedItem === 6 ? "selected" : ""}`}
+            href="#6"
+            onClick={() => handleItemClick(6)}
+          >
+            Mutual Funds
+          </a>
+        </li>
+      </ul>
+    </div>
+  );
+}
