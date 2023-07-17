@@ -30,7 +30,6 @@ img{
 @media(max-width:780px){
   .head{
     position: fixed;
-    max-width: 780px;
   }
   html {
     scroll-padding-top: 10%
