@@ -54,15 +54,9 @@ img{
   .leftnav{
     position: fixed;
     margin-left: -5%;
-    margin-top: -10%;
-    width: 35%;
+    margin-top: -80%;
+    width: 40%;
     
-  }
-  .faq-category{
-    font-weight: 10%;
-    padding: 0;
-    width: 20%;
-    white-space: normal;
   }
   .group, .asnwer{
     
@@ -81,14 +75,29 @@ li{
   position:relative;
   display: block;
   height: 50%;
-  width: 100%;
+  width: 80%;
   line-height: 300%;
-  font-size: 1rem;
-  padding: 0 0.5rem;
+  font-size: 15px;
+  padding: 0 0.25rem;
   color: #fff;
   background-color: rgb(0, 37, 100);
   white-space: nowrap;
   transition: background .3s;
+}
+@media(max-width:780px){
+  .faq-category {
+    position:relative;
+    display: block;
+    height: 50%;
+    width: 100%;
+    line-height: 300%;
+    font-size: 10px;
+    padding: 0 0.25rem;
+    color: #fff;
+    background-color: rgb(0, 37, 100);
+    white-space: nowrap;
+    transition: background .3s;
+  }
 }
 
 .faq-container{
@@ -104,7 +113,7 @@ li{
 @media (max-width: 780px) {
   .faq-container {
     margin-left: 40%;
-    margin-top: 20vh;
+    margin-top: 8vh;
     width: 60%;
   }
 }
