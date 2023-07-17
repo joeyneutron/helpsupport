@@ -111,7 +111,7 @@ li{
 }
 @media (max-width: 780px) {
   .faq-container {
-    margin-top: 350vh;
+    margin-top: 35vh;
     width: 86%;
     position: absolute;
     margin-left: 7%;
