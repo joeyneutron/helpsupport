@@ -12,6 +12,7 @@ body {
 }
 .asnwer{
   padding: 2%;
+  font-size: 0.5rem;
 }
 .head{
   position: fixed;
@@ -27,16 +28,19 @@ img{
   height: auto;
 }
 @media(max-width:780px){
-  img{
+  .head{
     position: fixed;
     max-width: 780px;
+  }
+  html {
+    scroll-padding-top: 10%
   }
 }
 
 .leftnav{
   width: 25%;
   height: 80%;
-  max-width: 25%;
+  max-width: 45%;
   position:fixed;
   top:45%;
   list-style: none;
@@ -49,10 +53,15 @@ img{
 @media(max-width:780px){
   .leftnav{
     position: fixed;
-    max-width: 30%;
-    margin-left: -8%;
-    margin-top: -8%
-
+    margin-left: -10%;
+    margin-top: -80%;
+    width: 40%;
+  }
+  .faq-category{
+    font-weight: 10%;
+    padding: 0;
+    width: 20%;
+    white-space: normal;
   }
 }
 li{
@@ -65,10 +74,8 @@ li{
   display: block;
   height: 50%;
   width: 100%;
-  line-height: 50px;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: .8px;
+  line-height: 200%;
+  font-size: 0.5rem;
   padding: 0 0.5rem;
   color: #fff;
   background-color: rgb(0, 37, 100);
@@ -88,8 +95,9 @@ li{
 }
 @media (max-width: 780px) {
   .faq-container {
-    margin-left: 10%;
-    margin-top: 0vh;
+    margin-left: 40%;
+    margin-top: 10vh;
+    width: 50%;
   }
 }
 
@@ -103,7 +111,7 @@ li{
   padding: 1%;
   cursor: pointer;
   background-color: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .question {
