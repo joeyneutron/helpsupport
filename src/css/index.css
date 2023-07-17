@@ -53,8 +53,8 @@ img{
 @media(max-width:780px){
   .leftnav{
     position: fixed;
-    margin-left: -4%;
     margin-top: -80%;
+    margin-left: -10%;
     width: 40%;
     
   }
